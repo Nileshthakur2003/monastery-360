@@ -1,0 +1,289 @@
+[
+  {
+    "name": "Amba Mamring Monastery",
+    "established": 1929,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Bakcham Monastery",
+    "established": 1966,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Bongyong Ani Gonpa",
+    "established": 2005,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Burtuk Ugen Pemacholing Monastery",
+    "established": 2000,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Choten Monastery",
+    "established": 1946,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Dichen Choling Monastery",
+    "established": 1987,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Dolepchen Boudha Sanskrit Monastery",
+    "established": 1991,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Duchi Gyalton Monastery",
+    "established": 2002,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Enchey Monastery",
+    "established": 1840,
+    "district": "East Sikkim",
+    "location": "Near Gangtok",
+    "head_priest": null
+  },
+  {
+    "name": "Kagon Tshechhogling Monastery",
+    "established": 1977,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Kathog Dorjeden Monastery",
+    "established": 1840,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Khatek Pema Choling Monastery",
+    "established": 1985,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Lingdok Tsangkhar Monastery",
+    "established": 1862,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Lingdum Zurmang Monastery",
+    "established": 1999,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Linkoed Monastery",
+    "established": 1840,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Martam Namdzong",
+    "established": 1917,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Martam Tsangkhar Monastery",
+    "established": 1951,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Old Rumtek Monastery",
+    "established": 1734,
+    "district": "East Sikkim",
+    "location": "Rumtek",
+    "head_priest": null
+  },
+  {
+    "name": "Pabyuk Monastery",
+    "established": 1875,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Pandam Monastery",
+    "established": 1955,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Pathing Matsang Monastery",
+    "established": 1860,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Radong Tensung Monastery",
+    "established": 1959,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Raloong Monastery",
+    "established": 1956,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Ray Mindu Katenling Monastery",
+    "established": 1873,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Rinak Monastery",
+    "established": 1841,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Rumtek Dharma Chakra Centre",
+    "established": 1962,
+    "district": "East Sikkim",
+    "location": "Rumtek",
+    "head_priest": null
+  },
+  {
+    "name": "Samdong Mintokgang Monastery",
+    "established": 1913,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Sang Monastery",
+    "established": 1912,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Sang-Ngor Monastery",
+    "established": 1961,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Simig Monastery",
+    "established": 1843,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Singtam Monastery",
+    "established": 1992,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Sumon Thubten Gatsalling Monastery",
+    "established": 1924,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Taglung Domsumling Monastery",
+    "established": 1987,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Taktse Ani Gonpa",
+    "established": 1980,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Thumon Monastery",
+    "established": 1921,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Tingkye Gonjang Monastery",
+    "established": 1981,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Tsangek Monastery",
+    "established": 1888,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Tsulakhang Monastery",
+    "established": 1898,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Karthok Monastery",
+    "established": null,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Rhenock Monastery",
+    "established": null,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  },
+  {
+    "name": "Simik Monastery",
+    "established": null,
+    "district": "East Sikkim",
+    "location": null,
+    "head_priest": null
+  }
+]
