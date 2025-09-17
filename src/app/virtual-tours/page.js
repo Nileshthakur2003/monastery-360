@@ -38,15 +38,14 @@ export default function VirtualToursPage() {
       {/* HEADER */}
       <header className="border-b">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-lg sm:text-xl font-bold tracking-tight">Monastery360</h1>
+          <h1 className="text-lg sm:text-xl font-bold tracking-tight" >Monastery360</h1>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a href="/map" className="hover:text-emerald-600">Map</a>
-            <a href="/virtual-tours" className="text-emerald-600 font-semibold">Virtual Tours</a>
-            <a href="/archives" className="hover:text-emerald-600">Archives</a>
-            <a href="/events" className="hover:text-emerald-600">Events</a>
-            <a href="/tours" className="hover:text-emerald-600">Tours</a>
+            <a className="hover:text-emerald-600" href='/archives'>Archives</a>
+            <a className="hover:text-emerald-600" href='virtual-tours'>Virtual Tours</a>
+            <a className="hover:text-emerald-600" href='/explore'>Explore</a>
+            <a className="hover:text-emerald-600" href='/events'>Events</a>
             <button className="border rounded-full px-4 py-1 hover:bg-emerald-50">Visit</button>
           </nav>
 

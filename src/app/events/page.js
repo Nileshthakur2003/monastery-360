@@ -1,27 +1,33 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, CalendarDays, MapPin } from 'lucide-react'
 
-export default function ArchivesPage() {
+export default function UpcomingEventsPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  // Sample archive items
-  const archives = [
+  // Sample events data
+  const events = [
     {
       id: 1,
-      title: 'Ancient Manuscript – Rumtek',
-      desc: 'Digitized manuscript from 1700s with Tibetan script.',
+      title: 'Cham Dance Festival – Rumtek Monastery',
+      date: 'October 15, 2025',
+      location: 'Rumtek Monastery, Sikkim',
+      desc: 'Experience the vibrant masked dance festival with sacred rituals, chants, and traditional music.',
     },
     {
       id: 2,
-      title: 'Wall Mural – Pemayangtse',
-      desc: 'High-resolution mural scan with symbolic references.',
+      title: 'Manuscript Conservation Workshop',
+      date: 'November 5–7, 2025',
+      location: 'Pemayangtse Monastery Library',
+      desc: 'Hands-on workshop for scholars and volunteers on preserving ancient texts.',
     },
     {
       id: 3,
-      title: 'Historical Document – Tashiding',
-      desc: 'Rare letter archived from the 18th century.',
+      title: 'Heritage Mapping Hackathon',
+      date: 'December 12, 2025',
+      location: 'Gangtok Cultural Centre',
+      desc: 'Collaborate to digitally map monasteries and artifacts using AI tools.',
     },
   ]
 
@@ -30,14 +36,14 @@ export default function ArchivesPage() {
       {/* HEADER */}
       <header className="border-b">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-lg sm:text-xl font-bold tracking-tight" >Monastery360</h1>
+          <h1 className="text-lg sm:text-xl font-bold tracking-tight">Monastery360</h1>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a className="hover:text-emerald-600" href='/archives'>Archives</a>
-            <a className="hover:text-emerald-600" href='virtual-tours'>Virtual Tours</a>
-            <a className="hover:text-emerald-600" href='/explore'>Explore</a>
-            <a className="hover:text-emerald-600" href='/events'>Events</a>
+            <a className="hover:text-emerald-600" href="/archives">Archives</a>
+            <a className="hover:text-emerald-600" href="/virtual-tours">Virtual Tours</a>
+            <a className="hover:text-emerald-600" href="/explore">Explore</a>
+            <a className="text-emerald-600 font-semibold" href="/events">Events</a>
             <button className="border rounded-full px-4 py-1 hover:bg-emerald-50">Visit</button>
           </nav>
 
@@ -58,8 +64,8 @@ export default function ArchivesPage() {
               <a href="/" className="hover:text-emerald-600">Home</a>
               <a href="/map" className="hover:text-emerald-600">Map</a>
               <a href="/virtual-tours" className="hover:text-emerald-600">Virtual Tours</a>
-              <a href="/archives" className="text-emerald-600 font-semibold">Archives</a>
-              <a href="/events" className="hover:text-emerald-600">Events</a>
+              <a href="/archives" className="hover:text-emerald-600">Archives</a>
+              <a href="/events" className="text-emerald-600 font-semibold">Events</a>
               <button className="mt-2 border rounded-full px-4 py-1 hover:bg-emerald-50 w-max">Visit</button>
             </nav>
           </div>
@@ -69,47 +75,38 @@ export default function ArchivesPage() {
       {/* HERO */}
       <section className="max-w-6xl mx-auto px-4 py-10 md:py-16 text-center">
         <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
-          Digital Archives
+          Upcoming Events
         </h2>
         <p className="mt-3 text-slate-600 max-w-xl mx-auto text-sm md:text-base">
-          Explore Sikkim’s rich manuscripts, murals, and documents with AI-powered search and tagging.
+          Join festivals, workshops, and community initiatives preserving Sikkim’s spiritual heritage.
         </p>
       </section>
 
-      {/* SEARCH BAR */}
+      {/* EVENTS LIST */}
       <section className="max-w-6xl mx-auto px-4 pb-10">
-        <div className="rounded-2xl border border-slate-200 p-6">
-          <h3 className="text-base md:text-lg font-semibold">Search the Archive</h3>
-          <div className="mt-4 flex gap-3 flex-col sm:flex-row">
-            <input
-              aria-label="search archives"
-              className="flex-1 rounded-full border px-4 py-2 text-sm"
-              placeholder="Search manuscripts, murals, or documents..."
-            />
-            <button className="rounded-full bg-emerald-500 text-white px-6 py-2 hover:bg-emerald-600">
-              Search
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* ARCHIVE LIST */}
-      <section className="max-w-6xl mx-auto px-4 pb-10">
-        <h3 className="text-xl md:text-2xl font-semibold">Featured Items</h3>
+        <h3 className="text-xl md:text-2xl font-semibold">Featured Events</h3>
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {archives.map((item) => (
+          {events.map((event) => (
             <div
-              key={item.id}
+              key={event.id}
               className="rounded-2xl border border-slate-200 p-5 hover:shadow-md transition"
             >
-              <h4 className="font-semibold text-base md:text-lg">{item.title}</h4>
-              <p className="text-sm text-slate-600 mt-2">{item.desc}</p>
-              <div className="mt-3 flex flex-wrap gap-2 text-sm">
+              <h4 className="font-semibold text-base md:text-lg">{event.title}</h4>
+              <div className="mt-2 flex items-center text-slate-500 text-sm gap-2">
+                <CalendarDays className="w-4 h-4" />
+                <span>{event.date}</span>
+              </div>
+              <div className="flex items-center text-slate-500 text-sm gap-2 mt-1">
+                <MapPin className="w-4 h-4" />
+                <span>{event.location}</span>
+              </div>
+              <p className="text-sm text-slate-600 mt-3">{event.desc}</p>
+              <div className="mt-4 flex flex-wrap gap-2 text-sm">
                 <button className="px-3 py-1 rounded-full border hover:border-emerald-500">
-                  View
+                  Learn More
                 </button>
                 <button className="px-3 py-1 rounded-full bg-emerald-500 text-white hover:bg-emerald-600">
-                  Download
+                  Register
                 </button>
               </div>
             </div>
@@ -117,21 +114,21 @@ export default function ArchivesPage() {
         </div>
       </section>
 
-      {/* COMMUNITY INVOLVEMENT */}
+      {/* COMMUNITY SECTION */}
       <section className="max-w-6xl mx-auto px-4 pb-16 grid gap-8 md:grid-cols-3">
         <div className="md:col-span-2 rounded-2xl border border-slate-200 p-6">
-          <h3 className="text-base md:text-lg font-semibold">Community Contributions</h3>
+          <h3 className="text-base md:text-lg font-semibold">Host an Event</h3>
           <p className="text-xs md:text-sm text-slate-600 mt-2">
-            Locals and scholars can upload documents, murals, or stories to preserve cultural assets digitally.
+            Monasteries and community groups can submit events to be featured on Monastery360.
           </p>
           <button className="mt-4 rounded-full bg-emerald-500 text-white px-6 py-2 hover:bg-emerald-600">
-            Upload Archive
+            Submit Event
           </button>
         </div>
         <aside className="rounded-2xl border border-slate-200 p-6">
           <h4 className="font-semibold">Volunteer</h4>
           <p className="text-sm text-slate-600 mt-2">
-            Join participatory archiving and help digitize Sikkim’s heritage.
+            Help organize and document Sikkim’s spiritual gatherings.
           </p>
           <button className="mt-4 w-full rounded-full border px-4 py-2 hover:border-emerald-500">
             Become a Volunteer
