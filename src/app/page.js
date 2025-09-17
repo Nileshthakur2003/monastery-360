@@ -28,8 +28,8 @@ export default function HomePage() {
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a className="hover:text-emerald-600" href='/archives'>Archives</a>
             <a className="hover:text-emerald-600" href='virtual-tours'>Virtual Tours</a>
-            <a className="hover:text-emerald-600" href='/archives'>Archives</a>
-            <a className="hover:text-emerald-600" href='/'>Events</a>
+            <a className="hover:text-emerald-600" href='/explore'>Explore</a>
+            <a className="hover:text-emerald-600" href='/events'>Events</a>
             <button className="border rounded-full px-4 py-1 hover:bg-emerald-50">Visit</button>
           </nav>
 

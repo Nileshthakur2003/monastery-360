@@ -60,11 +60,10 @@ export default function ToursPage() {
         {mobileMenuOpen && (
           <div className="md:hidden border-t bg-white">
             <nav className="flex flex-col gap-3 px-4 py-4 text-sm">
-              <a href="/map" className="hover:text-emerald-600">Map</a>
-              <a href="/virtual-tours" className="hover:text-emerald-600">Virtual Tours</a>
-              <a href="/archives" className="hover:text-emerald-600">Archives</a>
-              <a href="/events" className="hover:text-emerald-600">Events</a>
-              <a href="/tours" className="text-emerald-600 font-semibold">Tours</a>
+               <a className="hover:text-emerald-600" href='/archives'>Archives</a>
+            <a className="hover:text-emerald-600" href='virtual-tours'>Virtual Tours</a>
+            <a className="hover:text-emerald-600" href='/explore'>Explore</a>
+            <a className="hover:text-emerald-600" href='/events'>Events</a>
               <button className="mt-2 border rounded-full px-4 py-1 hover:bg-emerald-50 w-max">Visit</button>
             </nav>
           </div>
