@@ -171,7 +171,23 @@ export default function ExplorePage() {
     lng: 88.391,
     short: 'Major Kagyu monastery near Ravangla.',
     popup: 'Ralong Monastery, near Namchi and Ravangla, is a key center of the Kagyu sect. It hosts the vibrant Pang Lhabsol festival and houses rare scriptures and thangkas.'
-  }
+  },
+  {
+  id: 'sangacholing',
+  name: 'Sang Ngag Choling Monastery',
+  lat: 27.299,
+  lng: 88.232,
+  short: 'Second oldest monastery in Sikkim.',
+  popup: 'Founded in 1697, Sangacholing Monastery near Soreng is perched on a ridge above Pelling. It belongs to the Nyingma sect and offers panoramic views of the Himalayas. Accessible via a short forest hike, it’s a serene spiritual retreat.'
+},
+{
+  id: 'rabdentse',
+  name: 'Rabdentse Ruins',
+  lat: 27.296,
+  lng: 88.260,
+  short: 'Historic capital with spiritual remnants.',
+  popup: 'Rabdentse was the second capital of Sikkim and lies near Pemayangtse Monastery. Though not a monastery, its ruins include chortens and meditation sites, making it a spiritually significant stop on the Buddhist heritage trail.'
+}
 
 ]
 
@@ -195,7 +211,9 @@ export default function ExplorePage() {
     monasteries.find(m => m.id === 'ngadak'),
     monasteries.find(m => m.id === 'doling'),
     monasteries.find(m => m.id === 'tendong'),
-    monasteries.find(m => m.id === 'ralong')
+    monasteries.find(m => m.id === 'ralong'),
+    monasteries.find(m => m.id === 'sangacholing'),
+    monasteries.find(m => m.id === 'rabdentse'),
       
   ].filter(Boolean);
 

@@ -7,7 +7,6 @@ import L from 'leaflet'
 import 'leaflet-routing-machine'
 import 'leaflet-routing-machine/dist/leaflet-routing-machine.css'
 
-// Fix marker icons
 // Fix marker icons - use default Leaflet marker
 if (typeof window !== 'undefined') {
   delete L.Icon.Default.prototype._getIconUrl
@@ -34,15 +33,21 @@ function ChangeView({ center, zoom, markers }) {
   return null
 }
 
-// New component to draw road route
+// Component to draw road route
 function Routing({ route }) {
   const map = useMap()
 
   useEffect(() => {
+    // Return if the routing control has already been initialized
+    if (map.routingControl) {
+        map.removeControl(map.routingControl);
+    }
+    
     if (!route || route.length < 2) return
 
     const waypoints = route.map(r => L.latLng(r.lat, r.lng))
 
+    // Initialize routing control and attach it to the map instance
     const routingControl = L.Routing.control({
       waypoints: waypoints,
       routeWhileDragging: false,
@@ -51,10 +56,19 @@ function Routing({ route }) {
       lineOptions: {
         styles: [{ color: '#059669', opacity: 0.7, weight: 4 }],
       },
-      createMarker: (i, wp) => L.marker(wp.latLng),
+      // Do NOT create markers here, as you are creating them separately below
+      createMarker: () => null, 
     }).addTo(map)
+    
+    // Save control to map instance to allow removal on unmount/re-run
+    map.routingControl = routingControl;
 
-    return () => map.removeControl(routingControl)
+    return () => {
+        if(map.routingControl) {
+            map.removeControl(map.routingControl);
+            map.routingControl = null;
+        }
+    }
   }, [route, map])
 
   return null
@@ -78,19 +92,19 @@ export default function SikkimMap({ monasteries = [], route = [] }) {
 
       <ChangeView center={SIKKIM_CENTER} zoom={INITIAL_ZOOM} markers={markerPositions} />
 
+      {/* Render Monasteries Markers and Popups */}
       {markerPositions.map(m => (
-  <Marker key={m.id} position={[m.lat, m.lng]}>
-    <Popup>
-      <div className="font-bold">{m.name}</div>
-      <div>{m.short}</div>
-      {m.popup && <div className="text-sm text-slate-700 mt-1">{m.popup}</div>}
-      <a href={`/explore/${m.id}`} className="text-emerald-600 hover:underline text-sm mt-1 block">
-        View Details →
-      </a>
-    </Popup>
-  </Marker>
-))}
-
+        <Marker key={m.id} position={[m.lat, m.lng]}>
+          <Popup>
+            <div className="font-bold">{m.name}</div>
+            <div>{m.short}</div>
+            {m.popup && <div className="text-sm text-slate-700 mt-1">{m.popup}</div>}
+            <a href={`/explore/${m.id}`} className="text-emerald-600 hover:underline text-sm mt-1 block">
+              View Details →
+            </a>
+          </Popup>
+        </Marker>
+      ))}
 
       <Routing route={route} />
     </MapContainer>

@@ -15,12 +15,13 @@ export default function LoginPage() {
 
     // Hardcoded credentials by role
     const users = {
-      "admin@sikkim.com": { password: "1234", redirect: "/dashboard/admin" },
-      "tourist@sikkim.com": { password: "1234", redirect: "/dashboard/tourist" },
-      "monk@sikkim.com": { password: "1234", redirect: "/dashboard/monk" },
-      "researcher@sikkim.com": { password: "1234", redirect: "/dashboard/researcher" },
-      "restaurant@sikkim.com": { password: "1234", redirect: "/dashboard/restaurant" },
-      "transport@sikkim.com": { password: "1234", redirect: "/dashboard/transport" },
+      "admin@sikkim.com": { password: "1234", redirect: "/admin/dashboard" },
+      "tourist@sikkim.com": { password: "1234", redirect: "/tourist/dashboard" },
+      "monk@sikkim.com": { password: "1234", redirect: "/monastery/dashboard" },
+      "hotel@sikkim.com": { password: "1234", redirect: "/hotel/dashboard" },
+      "researcher@sikkim.com": { password: "1234", redirect: "/researcher/dashboard" },
+      "restaurant@sikkim.com": { password: "1234", redirect: "/restaurant/dashboard" },
+      "transport@sikkim.com": { password: "1234", redirect: "/transport/dashboard" },
     }
 
     if (users[email] && users[email].password === password) {
