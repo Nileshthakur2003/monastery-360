@@ -18,7 +18,7 @@ export default function LoginPage() {
       "admin@sikkim.com": { password: "1234", redirect: "/admin/dashboard" },
       "tourist@sikkim.com": { password: "1234", redirect: "/tourist/dashboard" },
       "monk@sikkim.com": { password: "1234", redirect: "/monastery/dashboard" },
-      "hotel@sikkim.com": { password: "1234", redirect: "/hotel/dashboard" },
+      "hotel@sikkim.com": { password: "1234", redirect: "/accomodation/dashboard" },
       "researcher@sikkim.com": { password: "1234", redirect: "/researcher/dashboard" },
       "restaurant@sikkim.com": { password: "1234", redirect: "/restaurant/dashboard" },
       "transport@sikkim.com": { password: "1234", redirect: "/transport/dashboard" },
