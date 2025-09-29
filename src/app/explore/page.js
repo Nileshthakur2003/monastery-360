@@ -2,10 +2,16 @@
 
 import React, { useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import dynamic from 'next/dynamic'
+// AFTER: Dynamic import
+import dynamic from 'next/dynamic';
 
-// Dynamically import the actual map component
-const SikkimMap = dynamic(() => import('@/components/SikkimMap'), { ssr: false });
+const SikkimMap = dynamic(
+  () => import('@/components/SikkimMap'), // Path to your map component
+  { 
+    ssr: false, // This is the crucial part that disables server-side rendering
+    loading: () => <div className="w-full h-[500px] bg-slate-200 animate-pulse rounded-xl flex items-center justify-center text-slate-500">Loading Map...</div>
+  }
+);
 
 
 export default function ExplorePage() {
