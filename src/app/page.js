@@ -2,6 +2,7 @@
 
 
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 const SikkimMap = dynamic(() => import('@/components/map'), {
   ssr: false, // disables SSR for this component
 })
@@ -30,7 +31,11 @@ export default function HomePage() {
             <a className="hover:text-emerald-600" href='virtual-tours'>Virtual Tours</a>
             <a className="hover:text-emerald-600" href='/explore'>Explore</a>
             <a className="hover:text-emerald-600" href='/events'>Events</a>
-            <button className="border rounded-full px-4 py-1 hover:bg-emerald-50">Visit</button>
+            <button className="border rounded-full px-4 py-1 hover:bg-emerald-50">
+              <Link href="/auth/login">
+                Login
+              </Link>
+            </button>
           </nav>
 
           {/* Mobile hamburger */}
@@ -70,8 +75,11 @@ export default function HomePage() {
             <button className="rounded-full bg-emerald-500 text-white px-5 py-2 text-sm font-semibold hover:bg-emerald-600">
               Start Tour
             </button>
-            <button className="rounded-full border border-slate-200 px-5 py-2 text-sm text-slate-700 hover:border-emerald-500">
-              Explore Map
+            <button  className="rounded-full border border-slate-200 px-5 py-2 text-sm text-slate-700 hover:border-emerald-500">
+               <Link href="/explore">
+                Explore
+              </Link>
+
             </button>
           </div>
         </div>
