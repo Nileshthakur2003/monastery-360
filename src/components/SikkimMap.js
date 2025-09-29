@@ -16,7 +16,7 @@ if (typeof window !== 'undefined') {
     shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
   })
 }
-
+ 
 const SIKKIM_CENTER = [27.36, 88.39]
 const INITIAL_ZOOM = 10
 
