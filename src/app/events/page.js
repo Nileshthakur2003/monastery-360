@@ -10,6 +10,7 @@ export default function UpcomingEventsPage() {
   const [searchQuery, setSearchQuery] = useState('')
   const [showRegisterMessage, setShowRegisterMessage] = useState(false)
   const [showVolunteerMessage, setShowVolunteerMessage] = useState(false)
+  const [showCalendarMessage, setShowCalendarMessage] = useState(false)
 
   const events = [
     {
@@ -48,6 +49,16 @@ export default function UpcomingEventsPage() {
     setExpandedEventId(expandedEventId === id ? null : id)
   }
 
+  const handleRegisterClick = () => {
+    setShowRegisterMessage(true)
+    setTimeout(() => setShowRegisterMessage(false), 3000)
+  }
+
+  const handleVolunteerClick = () => {
+    setShowVolunteerMessage(true)
+    setTimeout(() => setShowVolunteerMessage(false), 3000)
+  }
+
   const addToCalendar = (event) => {
     const icsContent = `BEGIN:VCALENDAR
 VERSION:2.0
@@ -59,6 +70,7 @@ LOCATION:${event.location}
 DESCRIPTION:${event.desc}
 END:VEVENT
 END:VCALENDAR`
+
     const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' })
     const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
@@ -66,16 +78,10 @@ END:VCALENDAR`
     link.download = `${event.title}.ics`
     link.click()
     URL.revokeObjectURL(url)
-  }
 
-  const handleRegisterClick = () => {
-    setShowRegisterMessage(true)
-    setTimeout(() => setShowRegisterMessage(false), 3000)
-  }
-
-  const handleVolunteerClick = () => {
-    setShowVolunteerMessage(true)
-    setTimeout(() => setShowVolunteerMessage(false), 3000)
+    // Show toast notification
+    setShowCalendarMessage(true)
+    setTimeout(() => setShowCalendarMessage(false), 3000)
   }
 
   const filteredEvents = events.filter((event) =>
@@ -267,9 +273,20 @@ END:VCALENDAR`
           </div>
         )}
 
+        {/* Toasts */}
         {showRegisterMessage && (
-          <div className="mt-6 text-center text-sm text-emerald-700 bg-emerald-50 border border-emerald-300 rounded p-3">
-            Registration feature coming soon. Stay tuned!
+          <div className="fixed bottom-6 right-6 bg-emerald-500 text-white px-4 py-2 rounded shadow-lg">
+            Registration feature coming soon!
+          </div>
+        )}
+        {showVolunteerMessage && (
+          <div className="fixed bottom-6 right-6 bg-teal-500 text-white px-4 py-2 rounded shadow-lg">
+            Volunteer registration will open soon!
+          </div>
+        )}
+        {showCalendarMessage && (
+          <div className="fixed bottom-6 right-6 bg-blue-500 text-white px-4 py-2 rounded shadow-lg">
+            Calendar event downloaded! Open it to add to your calendar.
           </div>
         )}
       </section>
@@ -296,11 +313,6 @@ END:VCALENDAR`
           >
             Become a Volunteer
           </button>
-          {showVolunteerMessage && (
-            <div className="mt-4 text-sm text-teal-700 bg-teal-50 border border-teal-300 rounded p-3 text-center">
-              Thanks for your interest! Volunteer registration will open soon.
-            </div>
-          )}
         </aside>
       </section>
 
