@@ -122,24 +122,33 @@ export default function HomePage() {
       </section>
 
       {/* FEATURED MONASTERIES */}
-      <section className="max-w-6xl mx-auto px-4 py-10">
-        <h3 className="text-xl md:text-2xl font-semibold">Featured Monasteries</h3>
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredMonasteries.map((m) => (
-            <div
-              key={m.id}
-              className="rounded-2xl border border-slate-200 p-5 hover:shadow-md transition"
-            >
-              <h4 className="font-semibold text-base md:text-lg">{m.name}</h4>
-              <p className="text-sm text-slate-600 mt-2">{m.short}</p>
-              <div className="mt-3 flex flex-wrap gap-2 text-sm">
-                <button className="px-3 py-1 rounded-full border hover:border-emerald-500">View</button>
-                <button className="px-3 py-1 rounded-full bg-emerald-500 text-white hover:bg-emerald-600">Book</button>
-              </div>
-            </div>
-          ))}
+
+<section className="max-w-6xl mx-auto px-4 py-10">
+  <h3 className="text-xl md:text-2xl font-semibold">Featured Monasteries</h3>
+  <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {featuredMonasteries.map((m) => (
+      <div
+        key={m.id}
+        className="rounded-2xl border border-slate-200 p-5 hover:shadow-lg transition-shadow"
+      >
+        <h4 className="font-semibold text-base md:text-lg">{m.name}</h4>
+        <p className="text-sm text-slate-600 mt-2">{m.short}</p>
+        <div className="mt-4 flex flex-wrap gap-2 text-sm">
+          <button className="px-3 py-1 rounded-full border hover:border-emerald-500 transition">
+            View
+          </button>
+
+          <Link href={`/book?monastery=${encodeURIComponent(m.name)}`}>
+            <button className="px-3 py-1 rounded-full bg-emerald-500 text-white hover:bg-emerald-600 transition">
+              Book
+            </button>
+          </Link>
         </div>
-      </section>
+      </div>
+    ))}
+  </div>
+</section>
+
 
       {/* ARCHIVES */}
       <section className="max-w-6xl mx-auto px-4 py-10 grid gap-8 md:grid-cols-3 md:py-16">
