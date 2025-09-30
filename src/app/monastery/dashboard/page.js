@@ -53,7 +53,6 @@ const ContentBlock = ({ title, children, icon }) => {
     );
 };
 
-
 export default function MonasteryDashboard() {
   const [activeMenu, setActiveMenu] = useState('Overview');
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -113,7 +112,6 @@ export default function MonasteryDashboard() {
             return <div>Select a tab</div>;
     }
   }
-
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
@@ -210,4 +208,3 @@ export default function MonasteryDashboard() {
     </div>
   );
 }
-
